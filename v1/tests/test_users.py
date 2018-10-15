@@ -1,6 +1,6 @@
 import unittest
 
-from app.v1 import create_app
+from app import create_app
 
 
 class TestOrders(unittest.TestCase):
