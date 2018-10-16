@@ -15,13 +15,25 @@ class TestOrders(unittest.TestCase):
         self.app_context.pop()
 
     def test_create_product(self):
-        pass
+        res = self.client.post(
+            "api/v1/products",
+            headers={"content-type": "application/json"}
+        )
+        self.assertEqual(res.status_code, 201)
 
     def test_get_all_products(self):
-        pass
+        res = self.client.get(
+            "api/v1/products",
+            headers={"content-type": "application/json"}
+        )
+        self.assertEqual(res.status_code, 200)
 
     def test_get_product_by_id(self):
-        pass
+        res = self.client.get(
+            "api/v1/products/1",
+            headers={"content-type": "application/json"}
+        )
+        self.assertEqual(res.status_code, 200)
 
 
 if __name__ == "__main__":
