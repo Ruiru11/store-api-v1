@@ -32,6 +32,6 @@ class Sales(object):
             "message": "sale record created",
             "status": "pass"
         }
-        return(make_response(jsonify(response_object)))
+        return(make_response(jsonify(response_object)),201)
 
     
