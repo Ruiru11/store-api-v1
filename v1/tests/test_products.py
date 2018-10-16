@@ -1,4 +1,5 @@
 import unittest
+import json
 
 
 from app import create_app
@@ -10,6 +11,13 @@ class TestOrders(unittest.TestCase):
         self.client = self.app.test_client()
         self.app_context = self.app.app_context()
         self.app_context.push()
+        self.data = {
+            "name": "steel",
+            "id": 1,
+            "price": "sh.825",
+            "category": "construction",
+            "description": "Y16-For Columns and Slab"
+        }
 
     def teardown(self):
         self.app_context.pop()
@@ -17,6 +25,7 @@ class TestOrders(unittest.TestCase):
     def test_create_product(self):
         res = self.client.post(
             "api/v1/products",
+            data=json.dumps(self.data),
             headers={"content-type": "application/json"}
         )
         self.assertEqual(res.status_code, 201)
