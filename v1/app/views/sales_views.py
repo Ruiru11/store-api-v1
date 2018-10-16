@@ -42,4 +42,5 @@ def get_sales():
 
 @don_sale.route("/sales/<int:id>", methods=["GET"])
 def get_sale(id):
+	"""The function gets a single order using its id"""
     return sale_insatnce.get_sale(id)
