@@ -1,6 +1,7 @@
 from flask import Blueprint
 from flask_restful import reqparse
 
+# local import
 from app.controllers.products_controllers import Products
 
 don_item = Blueprint('products', __name__, url_prefix="/api/v1")
@@ -10,6 +11,24 @@ product_instance = Products()
 
 @don_item.route("/products", methods=["POST"])
 def create_item():
+    """
+        The function handles all arguments required for
+        creating a new product.
+
+        Parameter:
+            name:Name of product and is of type str,
+                 the field must be included
+            category:Category of product is of type str,
+                     the field must be included
+            price:Price of product is of type str,
+                    the field must be included
+            description:Description of product is of type str,
+                        the field must be included
+        Returns:
+            Arguments are passed to the create_item function
+            in procucts_controllers to create the product
+
+        """
     parser = reqparse.RequestParser()
     parser.add_argument("name", type=str, required=True,
                         help="name required", location="json")
@@ -25,9 +44,11 @@ def create_item():
 
 @don_item.route("/products", methods=["GET"])
 def get_items():
+    """The function is used to get all product created"""
     return product_instance.get_items()
 
 
 @don_item.route("/products/<int:id>", methods=["GET"])
 def get_item(id):
+    """The function returns a specific product using its unique id"""
     return product_instance.get_item(id)
