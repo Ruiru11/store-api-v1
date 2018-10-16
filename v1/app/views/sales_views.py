@@ -34,3 +34,7 @@ def create_sale():
     return sale_insatnce.create_sale(data)
 
 
+@don_sale.route("/sales", methods=["GET"])
+def get_sales():
+    """The function is used to get all sales created"""
+    return sale_insatnce.get_sales()
