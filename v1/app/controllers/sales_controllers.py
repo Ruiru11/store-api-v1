@@ -33,5 +33,14 @@ class Sales(object):
             "status": "pass"
         }
         return(make_response(jsonify(response_object)), 201)
+    
+    def get_sales(self):
+        """
+        The function to get all sales created.
+
+        Returns:
+            products: A list of all created sales.
+        """
+        return(jsonify(self.sales))
 
     
