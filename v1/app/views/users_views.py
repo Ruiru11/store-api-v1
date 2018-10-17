@@ -6,7 +6,7 @@ from app.controllers.users_controllers import Users
 
 don_user = Blueprint('users', __name__, url_prefix="/api/v1")
 
-user_insatnce = Users()
+user_instance = Users()
 
 
 @don_user.route("/signup", methods=["POST"])
@@ -35,4 +35,4 @@ def create_user():
                         help="fiels cannot be empty", location="json")
     data = parser.parse_args()
 
-    return user_insatnce.create_user(data)
+    return user_instance.create_user(data)
