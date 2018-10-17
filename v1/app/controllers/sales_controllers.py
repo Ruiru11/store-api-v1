@@ -57,4 +57,4 @@ class Sales(object):
             "message": "sale with that id does not exist",
             "status": "fail"
         }
-return(make_response(jsonify(response_object)), 404)
+        return(make_response(jsonify(response_object)), 404)
