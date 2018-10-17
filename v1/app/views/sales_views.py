@@ -17,12 +17,12 @@ def create_sale():
         a sales record.
 
        Parameter:
-                name:Name of employee creatin the sales order is of type str.            item:this is a list, 
+                name:Name of employee creatin the sales order is of type str.            item:this is a list,
                 contains all the information realting to a sale.
 
        Return:
             Arguments are passed to the create_sale() function,
-            from sales_controller to create a sale order	
+            from sales_controller to create a sale order
      """
     parser = reqparse.RequestParser()
     parser.add_argument("description", action="append", type=str,
@@ -42,5 +42,5 @@ def get_sales():
 
 @don_sale.route("/sales/<int:id>", methods=["GET"])
 def get_sale(id):
-	"""The function gets a single order using its id"""
+    """The function gets a single order using its id"""
     return sale_insatnce.get_sale(id)

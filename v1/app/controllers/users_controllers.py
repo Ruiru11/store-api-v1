@@ -25,7 +25,8 @@ class Users(object):
         """
 
         user_id = len(self.users) + 1
-        user = {"id": user_id, "username": data["username"], "email": data["email"],
+        user = {"id": user_id, "username": data["username"],
+                "email": data["email"],
                 "password": data["password"], "role": data["role"]}
         self.users.append(user)
         response_object = {
