@@ -25,7 +25,12 @@ class Sales(object):
         """
         # generating an id
         sale_id = len(self.sales) + 1
+<<<<<<< HEAD
         sale = {"id": sale_id, "name":data["name"], "description": data["description"]}
+=======
+        sale = {"id": sale_id,
+                "name": data["name"], "description": data["description"]}
+>>>>>>> ch-update-tests-to-pass-161282837
         # adding sale to sales list
         self.sales.append(sale)
         response_object = {
@@ -42,3 +47,28 @@ class Sales(object):
             products: A list of all created sales.
         """
         return(jsonify(self.sales))
+<<<<<<< HEAD
+=======
+
+    def get_sale(self, id):
+        """
+        The function to get a specific sale record.
+
+        Parameter:
+                id: This is the unique identification number
+                 of a sale order
+
+        Returns:
+                Sales:A single sale order
+
+        """
+        for i, sale in enumerate(self.sales):
+            if sale['id'] == id:
+                return(make_response(jsonify(sale)))
+                break
+        response_object = {
+            "message": "sale with that id does not exist",
+            "status": "fail"
+        }
+        return(make_response(jsonify(response_object)), 404)
+>>>>>>> ch-update-tests-to-pass-161282837

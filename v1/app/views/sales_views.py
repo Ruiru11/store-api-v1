@@ -17,12 +17,12 @@ def create_sale():
         a sales record.
 
        Parameter:
-                name:Name of employee creatin the sales order is of type str.            item:this is a list, 
+                name:Name of employee creatin the sales order is of type str.            item:this is a list,
                 contains all the information realting to a sale.
 
        Return:
             Arguments are passed to the create_sale() function,
-            from sales_controller to create a sale order	
+            from sales_controller to create a sale order
      """
     parser = reqparse.RequestParser()
     parser.add_argument("description", action="append", type=str,
@@ -38,3 +38,12 @@ def create_sale():
 def get_sales():
     """The function is used to get all sales created"""
     return sale_insatnce.get_sales()
+<<<<<<< HEAD
+=======
+
+
+@don_sale.route("/sales/<int:id>", methods=["GET"])
+def get_sale(id):
+    """The function gets a single order using its id"""
+    return sale_insatnce.get_sale(id)
+>>>>>>> ch-update-tests-to-pass-161282837
