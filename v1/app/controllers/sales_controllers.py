@@ -25,7 +25,7 @@ class Sales(object):
         """
         # generating an id
         sale_id = len(self.sales) + 1
-        sale = {"id": sale_id, "description": data["description"]}
+        sale = {"id": sale_id, "name":data["name"], "description": data["description"]}
         # adding sale to sales list
         self.sales.append(sale)
         response_object = {
