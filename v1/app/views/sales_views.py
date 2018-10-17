@@ -32,8 +32,9 @@ def create_sale():
     data = parser.parse_args()
 
     return sale_insatnce.create_sale(data)
-<<<<<<< HEAD
 
-=======
->>>>>>> 8b39b8553c06024f3e555b6f8f0df58a495d866e
 
+@don_sale.route("/sales", methods=["GET"])
+def get_sales():
+    """The function is used to get all sales created"""
+    return sale_insatnce.get_sales()

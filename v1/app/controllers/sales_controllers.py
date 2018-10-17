@@ -25,22 +25,15 @@ class Sales(object):
         """
         # generating an id
         sale_id = len(self.sales) + 1
-<<<<<<< HEAD
-        sale = {"id": sale_id, "description": data["description"]}
-=======
         sale = {"id": sale_id, "name":data["name"], "description": data["description"]}
->>>>>>> 8b39b8553c06024f3e555b6f8f0df58a495d866e
         # adding sale to sales list
         self.sales.append(sale)
         response_object = {
             "message": "sale record created",
             "status": "pass"
         }
-<<<<<<< HEAD
-        return(make_response(jsonify(response_object)))
-=======
         return(make_response(jsonify(response_object)), 201)
-    
+
     def get_sales(self):
         """
         The function to get all sales created.
@@ -49,6 +42,3 @@ class Sales(object):
             products: A list of all created sales.
         """
         return(jsonify(self.sales))
->>>>>>> 8b39b8553c06024f3e555b6f8f0df58a495d866e
-
-    
