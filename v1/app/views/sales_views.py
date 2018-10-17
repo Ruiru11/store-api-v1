@@ -15,11 +15,9 @@ def create_sale():
     """
         The function helps handles all arguments required for creating,
         a sales record.
-
        Parameter:
                 name:Name of employee creatin the sales order is of type str.            item:this is a list,
                 contains all the information realting to a sale.
-
        Return:
             Arguments are passed to the create_sale() function,
             from sales_controller to create a sale order
@@ -38,12 +36,9 @@ def create_sale():
 def get_sales():
     """The function is used to get all sales created"""
     return sale_insatnce.get_sales()
-<<<<<<< HEAD
-=======
 
 
 @don_sale.route("/sales/<int:id>", methods=["GET"])
 def get_sale(id):
     """The function gets a single order using its id"""
-    return sale_insatnce.get_sale(id)
->>>>>>> ch-update-tests-to-pass-161282837
+return sale_insatnce.get_sale(id)

@@ -13,24 +13,17 @@ class Sales(object):
     def create_sale(self, data):
         """
         The function creates a new sale order.
-
         Parameter:
                   data:This are values that are passed,
                         they are defined and handled
                         in sales_views.py
-
         Returns:
                 Sales:A sale record  
-
         """
         # generating an id
         sale_id = len(self.sales) + 1
-<<<<<<< HEAD
-        sale = {"id": sale_id, "name":data["name"], "description": data["description"]}
-=======
         sale = {"id": sale_id,
                 "name": data["name"], "description": data["description"]}
->>>>>>> ch-update-tests-to-pass-161282837
         # adding sale to sales list
         self.sales.append(sale)
         response_object = {
@@ -42,25 +35,19 @@ class Sales(object):
     def get_sales(self):
         """
         The function to get all sales created.
-
         Returns:
             products: A list of all created sales.
         """
         return(jsonify(self.sales))
-<<<<<<< HEAD
-=======
 
     def get_sale(self, id):
         """
         The function to get a specific sale record.
-
         Parameter:
                 id: This is the unique identification number
                  of a sale order
-
         Returns:
                 Sales:A single sale order
-
         """
         for i, sale in enumerate(self.sales):
             if sale['id'] == id:
@@ -70,5 +57,4 @@ class Sales(object):
             "message": "sale with that id does not exist",
             "status": "fail"
         }
-        return(make_response(jsonify(response_object)), 404)
->>>>>>> ch-update-tests-to-pass-161282837
+return(make_response(jsonify(response_object)), 404)
