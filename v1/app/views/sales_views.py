@@ -32,5 +32,8 @@ def create_sale():
     data = parser.parse_args()
 
     return sale_insatnce.create_sale(data)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8b39b8553c06024f3e555b6f8f0df58a495d866e
 
