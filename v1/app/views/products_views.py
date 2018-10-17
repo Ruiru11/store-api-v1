@@ -29,7 +29,7 @@ def create_item():
             in procucts_controllers to create the product
 
         """
-    parser = reqparse.RequestParser()
+    parser = reqparse.RequestParser(bundle_errors=True)
     parser.add_argument("name", type=str, required=True,
                         help="name required", location="json")
     parser.add_argument("category", type=str, required=True,

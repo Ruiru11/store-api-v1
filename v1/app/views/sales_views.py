@@ -22,7 +22,7 @@ def create_sale():
             Arguments are passed to the create_sale() function,
             from sales_controller to create a sale order
      """
-    parser = reqparse.RequestParser()
+    parser = reqparse.RequestParser(bundle_errors=True)
     parser.add_argument("description", action="append", type=str,
                         help="must be given", location="json")
     parser.add_argument("name", type=str, required=True,
