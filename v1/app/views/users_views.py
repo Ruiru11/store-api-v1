@@ -24,7 +24,7 @@ def create_user():
 
 
     """
-    parser = reqparse.RequestParser()
+    parser = reqparse.RequestParser(bundle_errors=True)
     parser.add_argument("username", type=str, required=True,
                         help="field cannot be empty", location="json")
     parser.add_argument("email", type=str, required=True,
