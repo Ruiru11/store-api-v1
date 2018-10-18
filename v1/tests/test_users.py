@@ -16,6 +16,10 @@ class TestOrders(unittest.TestCase):
             "email": "camil@new.com",
             "role": "attendant"
         }
+        self.login = {
+            "email": "camil@new.com",
+            "password": "password"
+        }
 
     def teardown(self):
         self.app_context.pop()
@@ -27,6 +31,14 @@ class TestOrders(unittest.TestCase):
             headers={"content-type": "application/json"}
         )
         self.assertEqual(res.status_code, 201)
+
+    def test_signin_user(self):
+        res = self.client.post(
+            "api/v1/signin",
+            data=json.dumps(self.login),
+            headers={"content-type": "application/json"}
+        )
+        self.assertEqual(res.status_code, 200)
 
 
 if __name__ == "__main__":

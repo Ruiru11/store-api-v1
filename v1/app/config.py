@@ -2,7 +2,6 @@ import os
 
 
 class Config:
-    SECRET_KEY = os.getenv('SECRET_KEY', 'jjhjhjhjhiui')
     DEGUG = True
 
 
@@ -16,7 +15,7 @@ class TestingConfig(Config):
 
 
 class ProductionConfig(Config):
-    DEBUG = False
+    DEBUG = True
 
 
 Config_by_name = dict(
@@ -25,4 +24,3 @@ Config_by_name = dict(
     prod=ProductionConfig
 )
 
-key = Config.SECRET_KEY
