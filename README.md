@@ -6,9 +6,9 @@
 
 ## HELPS MANAGE CRUD OPERATIONS
 
-## Installation
-> Navigate to where you want to install the project
-> In your terminal:
+## Installation:
+. Navigate to where you want to install the project
+. In your terminal:
 . git clone `https://github.com/Ruiru11/store-api-v1.git`
 . Navigate into into the created folder 
 . git init 
@@ -76,7 +76,7 @@ pip install -r requirements.txt
 . Used to get a single product created (accessible to both admin and attendants)
 
 > ```GET/api/v1/sales``` 
-. Used to get a11 sale orders (only used accesible to admin)
+. Used to get all sale orders (only  accesible to admin)
 
 > ```GET/api/v1/sales/<int:id>```
 . Used to get a single sale order (accessible only to admin and attendant who created the orders)
@@ -84,7 +84,7 @@ pip install -r requirements.txt
 ## How should this be manually tested?
 
 #### After cloning the repo locally run python run.py
-. Using postmant to test the above endpoints using the below headers
+. Using postman to test the above endpoints using the below headers
 
 ##### key Content-Type →application/json
 ##### Key Authorization → Token
