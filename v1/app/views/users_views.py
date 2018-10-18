@@ -36,3 +36,25 @@ def create_user():
     data = parser.parse_args()
 
     return user_instance.create_user(data)
+
+
+@don_user.route("/signin", methods=["POST"])
+def signin_user():
+    """
+    The function signsin a user.
+
+    Parameters:
+        email:Email used during regestration.
+        password:Password used to create account.
+
+    Returns:
+        User: Signsin a user.
+    """
+    parser = reqparse.RequestParser()
+    parser.add_argument("email", type=str, required=True,
+                        help="cannot be empty", location="json")
+    parser.add_argument("password", type=str, required=True,
+                        help="cannot be empty", location="json")
+    data = parser.parse_args()
+
+    return user_instance.signin_user(data)
