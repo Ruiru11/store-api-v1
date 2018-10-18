@@ -7,11 +7,11 @@
 ## HELPS MANAGE CRUD OPERATIONS
 
 ## Installation:
-. Navigate to where you want to install the project
-. In your terminal:
-. git clone `https://github.com/Ruiru11/store-api-v1.git`
-. Navigate into into the created folder 
-. git init 
+1. Navigate to where you want to install the project
+2. In your terminal:
+3. git clone `https://github.com/Ruiru11/store-api-v1.git`
+4. Navigate into into the created folder 
+5. git init 
 
 #### create a virtualenv environment 
 
