@@ -3,6 +3,9 @@ from flask_restful import reqparse
 
 # local import
 from app.controllers.sales_controllers import Sales
+from app.controllers.users_controllers import Users
+
+usr = Users()
 
 
 don_sale = Blueprint('sales', __name__, url_prefix="/api/v1")
@@ -11,6 +14,7 @@ sale_insatnce = Sales()
 
 
 @don_sale.route("/sales", methods=["POST"])
+@usr.logged_in
 def create_sale():
     """
         The function helps handles all arguments required for creating,
@@ -33,12 +37,16 @@ def create_sale():
 
 
 @don_sale.route("/sales", methods=["GET"])
-def get_sales():
+@usr.logged_in
+@usr.check_admin
+def get_sales(user_role=None):
     """The function is used to get all sales created"""
     return sale_insatnce.get_sales()
 
 
 @don_sale.route("/sales/<int:id>", methods=["GET"])
-def get_sale(id):
+@usr.logged_in
+@usr.check_admin
+def get_sale(id,user_role=None):
     """The function gets a single order using its id"""
     return sale_insatnce.get_sale(id)

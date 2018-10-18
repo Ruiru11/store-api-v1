@@ -3,6 +3,10 @@ from flask_restful import reqparse
 
 # local import
 from app.controllers.products_controllers import Products
+from app.controllers.users_controllers import Users
+
+usr = Users()
+
 
 don_item = Blueprint('products', __name__, url_prefix="/api/v1")
 
@@ -10,7 +14,9 @@ product_instance = Products()
 
 
 @don_item.route("/products", methods=["POST"])
-def create_item():
+@usr.logged_in
+@usr.check_admin
+def create_item(user_role=None):
     """
         The function handles all arguments required for
         creating a new product.
@@ -43,12 +49,14 @@ def create_item():
 
 
 @don_item.route("/products", methods=["GET"])
+@usr.logged_in
 def get_items():
     """The function is used to get all product created"""
     return product_instance.get_items()
 
 
 @don_item.route("/products/<int:id>", methods=["GET"])
+@usr.logged_in
 def get_item(id):
     """The function returns a specific product using its unique id"""
     return product_instance.get_item(id)
