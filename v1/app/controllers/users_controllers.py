@@ -68,7 +68,7 @@ class Users(object):
                     return(make_response(jsonify(response_object)),409)
 
     def generate_token(self, id, username, role):
-        """Generate authentication token."""
+        """Generate authentication token for signin."""
         payload = {
             'exp': datetime.datetime.now() + datetime.timedelta(seconds=9000),
             'iat': datetime.datetime.now(),
