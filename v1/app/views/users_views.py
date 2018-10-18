@@ -4,6 +4,10 @@ from flask_restful import reqparse
 # local imports
 from app.controllers.users_controllers import Users
 
+
+usr = Users()
+
+
 don_user = Blueprint('users', __name__, url_prefix="/api/v1")
 
 user_instance = Users()

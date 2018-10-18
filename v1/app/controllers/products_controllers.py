@@ -9,6 +9,7 @@ class Products(object):
         # creates an empty list
         self.items = []
 
+
     def create_item(self, data):
         """
         The function to create a new product.
@@ -21,7 +22,6 @@ class Products(object):
             Products: A product with all data passed and a
                         unique id
         """
-        # generating an id
         item_id = len(self.items) + 1
         item = {"id": item_id, "name": data['name'],
                 "price": data['price'],
@@ -29,8 +29,8 @@ class Products(object):
                 "category": data['category']}
         self.items.append(item)
         response_object = {
-            "status": "success",
-            "message": "order created successfully"
+           "status": "success",
+             "message": "Product created successfully"
         }
         return(make_response(jsonify(response_object)), 201)
 
