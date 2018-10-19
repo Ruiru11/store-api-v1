@@ -2,7 +2,7 @@ import os
 
 from app import create_app
 
-environment = os.getenv('ENV')
+environment = os.getenv('ENV' or 'dev')
 print('environment', environment)
 app = create_app(environment)
 
