@@ -12,4 +12,8 @@ def create_app(config_name):
     app.register_blueprint(don_item)
     app.register_blueprint(don_sale)
     app.register_blueprint(don_user)
+
+    @app.route('/')
+    def root():
+        return redirect("https://documenter.getpostman.com/view/5475581/RWguwbzr")
     return app
