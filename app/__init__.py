@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, redirect
 
 from .config import Config_by_name
 from app.views.products_views import don_item
